@@ -1,0 +1,27 @@
+div.navbar {
+  background-color: lavenderblush;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem 0.75rem;
+}
+
+#brand-text {
+  flex: 3;
+}
+
+#nav-list {
+  list-style-type: none;
+
+  flex: 1;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav-list > li > a {
+  text-decoration: none;
+  color: black;
+}
