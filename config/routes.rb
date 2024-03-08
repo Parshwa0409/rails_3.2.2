@@ -17,9 +17,7 @@ Rails.application.routes.draw do
   # route to the page where the new user will register
   get 'sign_up', to: 'registration#new'
 
-  # if we post to new, we might get the data in new() of registrations controller
-  post 'sign_up', to: 'registration#new'
-
-  get 'sign_up/new', to: 'registration#new'
+  # if we post to create, we might get the data in create() of registrations controller
+  post 'sign_up', to: 'registration#create'
 
 end

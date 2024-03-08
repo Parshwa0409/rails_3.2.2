@@ -11,4 +11,9 @@ class RegistrationController < ApplicationController
     @user = User.new()
   end
 
+  # now post-sign_up lads to the "regestrations/create", therefore the create() will get all the form element and we can access the data inside the form
+  def create
+    flash[:notice] = "You have submitted form & you have been redirected to 'registrations/create' route."
+  end
+
 end
