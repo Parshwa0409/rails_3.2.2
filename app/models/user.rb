@@ -14,6 +14,6 @@ class User < ApplicationRecord
     # store the virtual password & allow us to do the password_confirmation also
     has_secure_password
 
-    validates :email, presence: true
+    validates :email, uniqueness: true, presence: true
 
 end

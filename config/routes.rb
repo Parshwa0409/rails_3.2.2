@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  
   get "up" => "rails/health#show", as: :rails_health_check
   
   root to:"home#index"
@@ -16,6 +17,11 @@ Rails.application.routes.draw do
 
   # route to the page where the new user will register
   get 'sign_up', to: 'registration#new'
+
+  # route to sign-in the user
+  get 'sign_in', to:'sign_in#index'
+  post 'sign_in_check', to:'sign_in#check'
+
 
   # if we post to create, we might get the data in create() of registrations controller
   post 'sign_up', to: 'registration#create'

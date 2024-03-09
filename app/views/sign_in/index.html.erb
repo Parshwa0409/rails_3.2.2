@@ -1,0 +1,28 @@
+<%# creating a form where i take in user & password & login if erverything is correct %>
+
+<%# form_with looks for an url based upon our model like it must do post-user, therefore we must have a post-request %>
+<%= form_with model: @user, url: sign_in_check_path, data: { turbo: false }  do |form| %>
+
+    <%# if while sign-in there was an error, then we will display the message there itself, addinf the instace-object of @user is necessary %>
+    <% if !@user.nil? && @user.errors.any? %>
+        <div class="alert alert-danger d-flex justify-content-center" role="alert">
+            <% @user.errors.full_messages.each do |msg|%>
+                <%=msg%>
+            <% end %>
+        </div>
+    <%end%>
+
+    <div class="my-3 py-2">
+        <%= form.label :email %>
+        <%= form.text_field :email, class:"form-control", placeholder:"j.doe@plansource.com"%>
+    </div>
+    <div class="my-3 py-2">
+        <%= form.label :password %>
+        <%= form.password_field :password, class:"form-control", placeholder:"********"%>
+    </div>
+
+    <div class="my-3">
+        <%= form.submit "Sign In", class:"btn btn-lg btn-block btn-primary"%>
+    </div>
+
+<% end %>
