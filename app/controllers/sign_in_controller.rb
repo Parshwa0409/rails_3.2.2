@@ -45,11 +45,17 @@ class SignInController < ApplicationController
 
   private
   def user_params
+    # debug
+    p(params)
     # once with :user when user not found or user == nil, if the @user == User.class then params has {:user}
     if params[:user]
-      params.require(:user).permit(:email, :password) 
+      params.require(:user).permit(:email, :password)
     else
       params.permit(:email, :password) 
     end
+
+
+
+
   end
 end

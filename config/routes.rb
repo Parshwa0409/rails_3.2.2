@@ -20,7 +20,10 @@ Rails.application.routes.draw do
 
   # route to sign-in the user
   get 'sign_in', to:'sign_in#index'
-  post 'sign_in_check', to:'sign_in#check'
+  post 'sign_in', to:'sign_in#check'
+
+  # log_out
+  get 'logout', to:'home#log_out'
 
 
   # if we post to create, we might get the data in create() of registrations controller

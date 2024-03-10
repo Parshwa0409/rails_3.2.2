@@ -9,7 +9,7 @@ div.navbar {
 }
 
 #brand-text {
-  flex: 3;
+  flex: 4;
 
   font-weight: bold;
 }
@@ -25,6 +25,7 @@ div.navbar {
 
 .nav-items {
   font-size: 1.25rem;
+  margin-right: 1rem;
 }
 
 #nav-list > li > a {

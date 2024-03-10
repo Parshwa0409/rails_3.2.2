@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
     flash.now[:notice] = "You are currently @ 'home/index' route."
-
     if session[:user_id]
       # get the user data from Users-Table with find() & display details
       begin
@@ -10,6 +9,11 @@ class HomeController < ApplicationController
       rescue 
       end
     end
+  end
 
+  def log_out
+    flash.now[:notice] = "You have logged out, successfully"
+    reset_session
+    redirect_to root_path
   end
 end
